@@ -27,6 +27,7 @@ new Vue({
     heal: function() {
       this.playerHealth += 8;
     },
-    giveUp: function() {}
+    giveUp: function() {},
+    registroAtaques
   }
 });
