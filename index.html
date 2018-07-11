@@ -36,15 +36,17 @@
       <section class="row controls" v-if="gameIsRunning">
         <div class="small-12 columns">
           <button id="attack" v-on:click="attack">ATTACK</button>
-          <button id="special-attack" v-on:click="specialAttack">SPECIAL ATTACK</button>
-          <button id="heal" @:click="heal">HEAL</button>
-          <button id="give-up" @:click="giveUp">GIVE UP</button>
+          <button id="special-attack" @click="specialAttack">SPECIAL ATTACK</button>
+          <button id="heal" @click="heal">HEAL</button>
+          <button id="give-up" @click="giveUp">GIVE UP</button>
         </div>
       </section>
-      <section class="row log">
+      <section class="row log" v-if="registroCombate.length>0">
         <div class="small-12 columns">
           <ul>
-            <li>
+            <li v-for="registroTurno in registroCombate">
+              <p class="player-turn">{{ registroTurno.jugador}} </p>
+              <p class="monster-turn">{{ registroTurno.enemigo}}</p>
 
             </li>
           </ul>
